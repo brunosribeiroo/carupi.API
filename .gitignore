@@ -105,4 +105,5 @@ dist
 
 # MongoDB
 .data/
+
 package-lock.json

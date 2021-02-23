@@ -1,23 +1,38 @@
 const conexao = require('../../db');
+const ParamsToJSON = require('../Helpers/ParamsToJSON');
 
 class Delete{
 
-    async deleteOne(condicao){
-        const db = await conexao();
-        db.collection('customers').deleteOne(condicao, (error, result) =>{
-            if(error) console.error('erro ao deletar item do DB', error);
-            console.log('item deletado com sucesso');
+    deleteOne(dados){
+        return new Promise(async(resolve, reject) =>{
+            const db = await conexao();
+            var data = await ParamsToJSON.queryToJSON(dados.condicao);
+
+            db.collection('cars').deleteOne(data, (error, result) =>{
+                if(error) {
+                    console.error('erro ao deletar carro do DB', error);
+                    reject(error);
+                } else {
+                    resolve(true);
+                }
+            })
         })
     }
 
-    async deleteMany(condicao){
-        const db = await conexao();
-        db.collection('customers').deleteMany(condicao, (error, result) =>{
-            if(error) console.error('erro ao pagar os itens selecionados no DB', error);
-            console.log('itens selecionados deletados com sucesso')
+    deleteMany(dados){
+        return new Promise(async(resolve, reject) =>{
+            const db = await conexao();
+            var data = await ParamsToJSON.queryToJSON(dados.condicao)
+            db.collection('cars').deleteMany(data, (error, result) =>{
+                if(error){
+                    console.error('erro ao deletar os carros selecionados no DB', error);
+                    reject(error);
+                } else {
+                    resolve(true);
+                }
+            })
         })
     }
-
 }
 
 module.exports = new Delete;

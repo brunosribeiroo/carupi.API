@@ -3,12 +3,12 @@ const conexao = require('./db');
 function createCollection(){
     return new Promise(async (resolve, reject) =>{
         const db = await conexao();
-        db.createCollection('customers', (error, result) =>{
+        db.createCollection('cars', (error, result) =>{
             if(error) {
-                console.error('erro ao criar a collection', error);
+                console.error('erro ao criar a collection cars', error);
                 reject(error);
             } else {
-                console.log('collection criada com sucesso');
+                console.log('collection cars criada com sucesso');
                 resolve(true);
             }
         })
@@ -28,7 +28,7 @@ function addDefaultCars(){
             { marca: 'TOYOTA', modelo: 'corolla', versao: 'XLI', ano: '2011', quilometragem: '105.000', cambio: 'automatico', preco: '40.500' } 
             ]
 
-        db.collection('customers').insertMany(myArrayCars, (error, result) =>{
+        db.collection('cars').insertMany(myArrayCars, (error, result) =>{
             if(error){
                 console.error('erro ao adicionar os carros ao DB', error);
                 reject(error);
