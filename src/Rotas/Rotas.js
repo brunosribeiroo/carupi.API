@@ -14,9 +14,18 @@ module.exports = app => {
         res.send('Olá Mundo!')
     });
 
+
+    //INSERT
+
+    app.post('/cars', (req, res) =>{
+        ControllerInsert.insertOne(req.body, res);
+    });
+
+
+
     //SELECT
 
-    app.get('/cars', (req, res) =>{
+    app.get('/cars?', (req, res) =>{
         if(req.query.condicao){
             var dados = req.query.condicao;
             ControllerSelect.selectOne(dados,res);
@@ -38,14 +47,6 @@ module.exports = app => {
     });
 
 
-    //INSERT
-
-    app.post('/cars', (req, res) =>{
-        ControllerInsert.insertOne(req.body, res);
-    });
-
-
-
     //UPDATE
     app.post('/cars/update', (req, res) =>{
         ControllerUpdate.updateOne(req.body, res);
@@ -63,5 +64,5 @@ module.exports = app => {
 
     app.post('/cars/delete/many', (req, res) =>{
         ControllerDelete.deleteMany(req.body, res);
-    })
+    });
 }

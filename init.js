@@ -24,7 +24,7 @@ function addDefaultCars(){
             { marca: 'GM', modelo: 'corsa', versao: 'joy', ano: '2005', quilometragem: '180.000', cambio: 'manual', preco: '15.000' },
             { marca: 'GM', modelo: 'cobalt', versao: 'LT', ano: '2014', quilometragem: '90.000', cambio: 'automatico', preco: '39.990' },
             { marca: 'VW', modelo: 'polo', versao: 'TSI', ano: '2019', quilometragem: '65.000', cambio: 'automatico', preco: '69.000' },
-            { marca: 'FIAT', modelo: 'toro', versao: 'volcano', ano: '2020', quilometragem: '15.000', cambio: 'automatico', preco: '144.000' },
+            { marca: 'FIAT', modelo: 'toro', versao: 'volcano', ano: '2020', quilometragem: '15.000', cambio: 'automatico', preco: '91.000' },
             { marca: 'TOYOTA', modelo: 'corolla', versao: 'XLI', ano: '2011', quilometragem: '105.000', cambio: 'automatico', preco: '40.500' } 
             ]
 
