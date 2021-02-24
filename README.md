@@ -26,6 +26,14 @@ Características
 ./carupi.API node init.js
  ```
 
+
+## **START** 
+```
+./carupi.API npm start
+ ```
+
+
+
 ## **CREATE** 
 
 Cadastra um novo carro
